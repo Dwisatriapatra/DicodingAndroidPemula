@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dicodingandroidpemula.R
 import com.example.dicodingandroidpemula.adapter.BeritaAdapter
-import com.example.dicodingandroidpemula.data.Berita
+import com.example.dicodingandroidpemula.model.Berita
 import com.example.dicodingandroidpemula.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

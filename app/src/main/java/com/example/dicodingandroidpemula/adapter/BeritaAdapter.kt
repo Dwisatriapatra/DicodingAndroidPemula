@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dicodingandroidpemula.R
-import com.example.dicodingandroidpemula.data.Berita
+import com.example.dicodingandroidpemula.model.Berita
 import com.example.dicodingandroidpemula.databinding.ItemBeritaBinding
 
 class BeritaAdapter (private val onClick: (Berita) -> Unit) : RecyclerView.Adapter<BeritaAdapter.ViewHolder>(){

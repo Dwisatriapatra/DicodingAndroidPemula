@@ -2,7 +2,8 @@ package com.example.dicodingandroidpemula.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dicodingandroidpemula.data.Berita
+import android.text.method.LinkMovementMethod
+import com.example.dicodingandroidpemula.model.Berita
 import com.example.dicodingandroidpemula.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -12,7 +13,6 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         detailActivityBinding = ActivityDetailBinding.inflate(layoutInflater)
-        supportActionBar?.hide() // hide the title bar
         setContentView(detailActivityBinding.root)
 
         initView()
@@ -29,5 +29,8 @@ class DetailActivity : AppCompatActivity() {
         detailActivityBinding.detailLinkBerita.text = listBerita.urlBerita
         detailActivityBinding.detailDeskripsi.text = listBerita.deskripsi
         detailActivityBinding.detailSumber.text = listBerita.sumber
+
+        //open browser action
+        detailActivityBinding.detailLinkBerita.movementMethod = LinkMovementMethod.getInstance()
     }
 }

@@ -11,7 +11,6 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         aboutActivityBinding = ActivityAboutBinding.inflate(layoutInflater)
-        supportActionBar?.hide() // hide the title bar
         setContentView(aboutActivityBinding.root)
     }
 }

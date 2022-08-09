@@ -1,4 +1,4 @@
-package com.example.dicodingandroidpemula.data
+package com.example.dicodingandroidpemula.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
