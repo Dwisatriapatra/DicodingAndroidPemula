@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DicodingAndroidPemula</string>
     <string name="berita">Berita</string>
+    <string name="welcome_text">Welcome to News App</string>
 </resources>
