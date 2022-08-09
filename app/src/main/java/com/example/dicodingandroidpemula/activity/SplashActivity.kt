@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashActivityBinding = ActivitySplashBinding.inflate(layoutInflater)
+        supportActionBar?.hide() // hide the title bar
         setContentView(splashActivityBinding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({

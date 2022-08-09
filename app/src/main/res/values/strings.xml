@@ -2,4 +2,10 @@
     <string name="app_name">DicodingAndroidPemula</string>
     <string name="berita">Berita</string>
     <string name="welcome_text">Welcome to News App</string>
+    <string name="nama_penulis">Nama Penulis</string>
+    <string name="img">img</string>
+    <string name="tanggal_terbit">Tanggal Terbit</string>
+    <string name="sumber">Sumber</string>
+    <string name="link_berita">Link Berita</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>

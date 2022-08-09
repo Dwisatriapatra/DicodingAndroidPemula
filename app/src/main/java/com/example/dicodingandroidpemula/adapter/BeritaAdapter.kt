@@ -14,6 +14,7 @@ class BeritaAdapter (private val onClick: (Berita) -> Unit) : RecyclerView.Adapt
 
     fun setListBerita(list: ArrayList<Berita>?){
         listBerita = list
+        notifyDataSetChanged()
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
