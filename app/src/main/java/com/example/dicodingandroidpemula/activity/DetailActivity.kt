@@ -4,9 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dicodingandroidpemula.databinding.ActivityDetailBinding
 import com.example.dicodingandroidpemula.model.Berita
