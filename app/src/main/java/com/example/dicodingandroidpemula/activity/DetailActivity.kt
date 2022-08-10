@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dicodingandroidpemula.databinding.ActivityDetailBinding
 import com.example.dicodingandroidpemula.model.Berita
+import com.squareup.picasso.Picasso
 
 class DetailActivity : AppCompatActivity() {
 
@@ -26,14 +27,14 @@ class DetailActivity : AppCompatActivity() {
         val listBerita = intent.getParcelableExtra<Berita>("data_berita")
 
         //initialize
-        detailActivityBinding.detailGambar.setImageResource(listBerita!!.gambar)
-        detailActivityBinding.detailJudul.text = listBerita.judul
-        detailActivityBinding.detailPenulis.text = listBerita.penulis
-        detailActivityBinding.detailTanggalTerbit.text = listBerita.tanggalTerbit
-        detailActivityBinding.detailLinkBerita.text = listBerita.urlBerita
+        detailActivityBinding.detailJudul.text = listBerita?.judul
+        detailActivityBinding.detailPenulis.text = listBerita?.penulis
+        detailActivityBinding.detailTanggalTerbit.text = listBerita?.tanggalTerbit
+        detailActivityBinding.detailLinkBerita.text = listBerita?.urlBerita
         detailActivityBinding.detailLinkBerita.paintFlags = Paint.UNDERLINE_TEXT_FLAG
-        detailActivityBinding.detailDeskripsi.text = listBerita.deskripsi
-        detailActivityBinding.detailSumber.text = listBerita.sumber
+        detailActivityBinding.detailDeskripsi.text = listBerita?.deskripsi
+        detailActivityBinding.detailSumber.text = listBerita?.sumber
+        Picasso.get().load(listBerita?.gambar).into(detailActivityBinding.detailGambar)
 
         //open browser action
         detailActivityBinding.detailLinkBerita.setOnClickListener {
@@ -52,7 +53,7 @@ class DetailActivity : AppCompatActivity() {
             intent.type = "text/plain"
             intent.putExtra(
                 Intent.EXTRA_TEXT,
-                "Hai, ayo cek berita dengan judul \"${listBerita.judul}\" pada tautan berikut ${listBerita.urlBerita}"
+                "Hai, ayo cek berita dengan judul \"${listBerita?.judul}\" pada tautan berikut ${listBerita?.urlBerita}"
             )
             startActivity(Intent.createChooser(intent, "Bagikan ke: "))
         }

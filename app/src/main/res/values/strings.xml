@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DicodingAndroidPemula</string>
     <string name="berita">Berita</string>
-    <string name="welcome_text">Welcome to News App</string>
+    <string name="welcome_text">Selamat datang di News App</string>
     <string name="nama_penulis">Nama Penulis</string>
     <string name="img">img</string>
     <string name="tanggal_terbit">Tanggal Terbit</string>
@@ -12,4 +12,7 @@
     <string name="email">dwisatriapatra1999@gmail.com</string>
     <string name="go_to_about">go to about</string>
     <string name="bagikan">Bagikan</string>
+    <string name="mode_list">Mode List</string>
+    <string name="mode_grid">Mode Grid</string>
+    <string name="mode_kartu">Mode Kartu</string>
 </resources>

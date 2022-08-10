@@ -10,6 +10,6 @@ data class Berita(
     val tanggalTerbit: String,
     val urlBerita: String,
     val sumber: String,
-    val gambar: Int,
+    val gambar: String,
     val deskripsi: String,
 ) : Parcelable
