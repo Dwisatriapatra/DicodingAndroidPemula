@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dicodingandroidpemula.R
+import com.example.dicodingandroidpemula.adapter.BeritaModeGridAdapter
 import com.example.dicodingandroidpemula.adapter.BeritaModeKartuAdapter
 import com.example.dicodingandroidpemula.adapter.BeritaModeListAdapter
 import com.example.dicodingandroidpemula.databinding.ActivityMainBinding
@@ -18,11 +20,12 @@ class MainActivity : AppCompatActivity() {
     private var listBerita = ArrayList<Berita>()
     private lateinit var beritaModeKartuAdapter: BeritaModeKartuAdapter
     private lateinit var beritaModeListAdapter: BeritaModeListAdapter
+    private lateinit var beritaModeGridAdapter: BeritaModeGridAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
-        supportActionBar?.title = "Home"
+        supportActionBar?.title = "Home (Mode Kartu)"
         setContentView(mainActivityBinding.root)
 
         initBeritaAdapter()
@@ -195,8 +198,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setMode(mode: String){
-        when(mode){
+    private fun setMode(mode: String) {
+        when (mode) {
             "mode_kartu" -> {
                 beritaModeKartuAdapter = BeritaModeKartuAdapter {
                     val intent = Intent(this, DetailActivity::class.java)
@@ -206,6 +209,7 @@ class MainActivity : AppCompatActivity() {
                 mainActivityBinding.rvBerita.layoutManager = LinearLayoutManager(this)
                 mainActivityBinding.rvBerita.adapter = beritaModeKartuAdapter
                 beritaModeKartuAdapter.setListBerita(listBerita)
+                supportActionBar?.title = "Home (Mode Kartu)"
             }
             "mode_list" -> {
                 beritaModeListAdapter = BeritaModeListAdapter {
@@ -216,9 +220,18 @@ class MainActivity : AppCompatActivity() {
                 mainActivityBinding.rvBerita.layoutManager = LinearLayoutManager(this)
                 mainActivityBinding.rvBerita.adapter = beritaModeListAdapter
                 beritaModeListAdapter.setListBerita(listBerita)
+                supportActionBar?.title = "Home (Mode List)"
             }
             "mode_grid" -> {
-
+                beritaModeGridAdapter = BeritaModeGridAdapter {
+                    val intent = Intent(this, DetailActivity::class.java)
+                    intent.putExtra("data_berita", it)
+                    startActivity(intent)
+                }
+                mainActivityBinding.rvBerita.layoutManager = GridLayoutManager(this, 2)
+                mainActivityBinding.rvBerita.adapter = beritaModeGridAdapter
+                beritaModeGridAdapter.setListBerita(listBerita)
+                supportActionBar?.title = "Home (Mode Grid)"
             }
         }
     }
