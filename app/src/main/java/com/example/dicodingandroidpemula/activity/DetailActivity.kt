@@ -44,6 +44,18 @@ class DetailActivity : AppCompatActivity() {
                 )
             )
         }
+
+        //share action button
+        detailActivityBinding.detailBagikanButton.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.type = "text/plain"
+            intent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Hai, ayo cek berita dengan judul \"${listBerita.judul}\" pada tautan berikut ${listBerita.urlBerita}"
+            )
+            startActivity(Intent.createChooser(intent, "Bagikan ke: "))
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
