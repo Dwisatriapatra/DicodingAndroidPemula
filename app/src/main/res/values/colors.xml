@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="warna_link">#211CAE</color>
+    <color name="warna_status_bar">#192A5F</color>
 </resources>

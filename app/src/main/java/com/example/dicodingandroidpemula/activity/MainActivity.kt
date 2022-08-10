@@ -1,6 +1,8 @@
 package com.example.dicodingandroidpemula.activity
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
         supportActionBar?.title = "Home (Mode Kartu)"
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#192A5F")))
         setContentView(mainActivityBinding.root)
 
         initBeritaAdapter()
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Golden opportunity’: Widodo’s China trip puts spotlight on trade",
                 "Aisyah Llewellyn",
-                "2022-07-15",
+                "15-07-2022",
                 "https://www.aljazeera.com/economy/2022/7/15/g20-finance-leaders-meet-in-bali-as-ukraine-inflation-top-agenda",
                 "Al Jazeera English",
                 "https://www.aljazeera.com/wp-content/uploads/2022/07/2019-06-28T123732Z_897468503_RC1D0ECB23E0_RTRMADP_3_G20-SUMMIT.jpg?resize=1200%2C630",
@@ -48,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Indonesiens neue Hauptstadt - grünste der Welt?",
                 "tagesschau.de",
-                "2022-08-01",
+                "01-08-2022",
                 "https://www.tagesschau.de/ausland/indonesien-borneo-101.html",
                 "tagesschau.de",
                 "https://www.tagesschau.de/multimedia/bilder/nusantara-frauen-101~_v-original.jpg",
@@ -59,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "For G20, Ukraine war thwarts cooperation on global economy",
                 "isyah Llewellyn",
-                "022-07-19",
+                "19-07-2022",
                 "https://www.aljazeera.com/economy/2022/7/19/g20-finance-no-communique-amid-ukraine-war",
                 "Al Jazeera English",
                 "https://www.aljazeera.com/wp-content/uploads/2022/07/2022-07-16T060627Z_1530693829_RC2SCV9OR7EH_RTRMADP_3_G20-INDONESIA.jpg?resize=1200%2C630",
@@ -71,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "China's Xi to hold talks with Indonesia's Jokowi in rare visit",
                 "Reuters",
-                "022-07-26",
+                "26-07-2022",
                 "https://finance.yahoo.com/news/xi-meets-jokowi-beijing-indonesia-091134207.html?guccounter=1&guce_referrer=aHR0cHM6Ly9uZXdzYXBpLm9yZy8&guce_referrer_sig=AQAAAGm0lOirQZFH4nTJzPWcxJi6O1054695Hy-f-Jiq_10lWf9TbseIeYQWTRr1ie-bwoh4LPxjgpUVz0yKcemIxrQIJdDHtLz8lzFF8zOz8WNSXbXNa7QK-fgBU05LJ8b1A46pR0O-ZhnWI7XlUMuddNc_S0-SG36piSUozZi08KXA",
                 "Yahoo Entertainment",
                 "https://s.yimg.com/uu/api/res/1.2/KthGfWccOvztKP_99CHyUw--~B/aD01NTg7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/reuters.com/84f4104a93bb0395bbab097674395a85",
@@ -82,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "G20 women’s forum accused of excluding Indigenous Indonesians",
                 "Aisyah Llewellyn",
-                "022-07-20",
+                "20-07-2022",
                 "https://www.aljazeera.com/economy/2022/7/20/g20-womens-forum-accused-of-excluding-indigenous-indonesians",
                 "Al Jazeera English",
                 "https://www.aljazeera.com/wp-content/uploads/2022/07/GP1SXYCG_.jpg?resize=1200%2C630",
@@ -93,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Indonesia’s PayPal, Yahoo bans cast cloud over tech hub dream",
                 "Randy Mulyanto, Leo Galuh",
-                "022-08-04",
+                "04-08-2022",
                 "https://www.aljazeera.com/economy/2022/8/4/indonesias-paypal-ban-casts-cloud-over-tech-hub-dreams",
                 "Al Jazeera English",
                 "https://www.aljazeera.com/wp-content/uploads/2022/08/389829224.jpg?resize=1200%2C630",
@@ -104,7 +107,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Jadi Saksi Kerja Keras Jokowi, Prabowo: Karena Kurus Beliau Energik",
                 "Anwar Sadat",
-                "2022-08-05",
+                "05-08-2022",
                 "https://www.viva.co.id/berita/nasional/1506114-jadi-saksi-kerja-keras-jokowi-prabowo-karena-kurus-beliau-energik",
                 "Viva.co.id",
                 "https://thumb.viva.co.id/media/frontend/thumbs3/2022/05/07/62768abfad474-ketua-umum-partai-gerindra-prabowo-subianto-temui-presiden-jokowi-kiri_665_374.jpg",
@@ -115,7 +118,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Besok Jokowi ke Jepang akan Bertemu Kaisar Naruhito-Permaisuri Masako",
                 "Ezra Sihite",
-                "2022-07-26",
+                "26-07-2022",
                 "https://www.viva.co.id/berita/dunia/1502030-besok-jokowi-ke-jepang-akan-bertemu-kaisar-naruhito-permaisuri-masako",
                 "Viva.co.id",
                 "https://thumb.viva.co.id/media/frontend/thumbs3/2022/07/25/62de446f8499c-presiden-jokowi-bersama-iriana-jokowi_665_374.jpeg",
@@ -126,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Jokowi Ketemu Relawan di Istana Bogor, Ini Analisa Pengamat",
                 "Agus Rahmat",
-                "2022-07-29",
+                "29-07-2022",
                 "https://www.viva.co.id/berita/politik/1503651-jokowi-ketemu-relawan-di-istana-bogor-ini-analisa-pengamat",
                 "Viva.co.id",
                 "https://thumb.viva.co.id/media/frontend/thumbs3/2022/07/14/62cff830bd64c-presiden-jokowi-resmikan-wajah-baru-sarinah_665_374.jpg",
@@ -137,7 +140,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Indonesia bans access to Steam, Epic Games, PayPal, and more",
                 "Emma Roth",
-                "2022-07-30",
+                "30-07-2022",
                 "https://www.theverge.com/2022/7/30/23285091/indonesia-bans-access-steam-epic-games-paypal-yahoo",
                 "The Verge",
                 "https://cdn.vox-cdn.com/thumbor/UjLcQjas-Ltb_kcBiRrfIQEA-vw=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/10817781/acastro_180509_1777_steam_0002.jpg",
@@ -148,7 +151,7 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Your Crunchyroll anime subscription just got cheaper in these 95 countries",
                 "Sean Hollister",
-                "022-07-18",
+                "18-07-2022",
                 "https://www.theverge.com/2022/7/18/23268979/crunchyroll-anime-price-cut-subscription",
                 "The Verge",
                 "https://cdn.vox-cdn.com/thumbor/LeRo9jVmviXtV8CYAUbgoUcv7a4=/0x0:1920x1005/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23884819/a0cda947fb86e83388fb0819899504341657899753_main.jpg",
@@ -159,11 +162,44 @@ class MainActivity : AppCompatActivity() {
             Berita(
                 "Digimon Adventure's Next Film Reunites Its Most Underrated DigiDestined",
                 "Justin Carter",
-                "2022-07-31",
+                "31-07-2022",
                 "https://gizmodo.com/digimon-adventure-02-film-the-beginning-1849352769",
                 "Gizmodo.com",
                 "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/e3500be9d440c77ddad7daa416505c14.png",
                 "Digimon isn’t quite the juggernaut it was back when us 90s kids were watching it early in the morning before school, but Toei has been gradually releasing more of it over the years. For anime fans, there was a reboot of the original Digimon Adventure season that premiered last year and whose English dub is currently in production. In addition to that anime, though, Toei also released two films that served as sequels to the original Adventure series, and now a new film is on the horizon to tie up its second season. The next film in the Adventure series was officially titled as Digimon Adventure 02 The Beginning at DigiFes 2022. Like how the first two films returned to the original DigiDestined kids as adults and closed out their story, The Beginning is intended to serve as a capper to the show’s second season. Yumeta Company, who worked on 2020's Adventure film, Last Evolution—Kizuna, is developing the film alongside Toei."
+            )
+        )
+        listBerita.add(
+            Berita(
+                "Jury Finds Former CIA Programmer Guilty of Leaking CIA Hacking Materials",
+                "Kevin Gosztola",
+                "15-07-2022",
+                "https://thedissenter.org/jury-guilty-cia-programmer-schulte-vault-7-wikileaks/",
+                "Thedissenter.org",
+                "https://thedissenter.org/content/images/2022/07/thurgoodmarshallcourthouse-1.png",
+                "A federal jury in New York convicted former CIA employee Joshua Schulte of violating the Espionage Act when he allegedly released materials on the CIA’s hacking capabilities to WikiLeaks. This was the second trial against Schulte. In March 2020, his first trial ended in a mistrial on several Espionage Act charges, but he was found guilty of contempt of court and lying to the FBI."
+            )
+        )
+        listBerita.add(
+            Berita(
+                "The hidden history of screen readers",
+                "Sheon Han",
+                "14-07-2022",
+                "https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda",
+                "The Verge",
+                "https://cdn.vox-cdn.com/thumbor/iV-c910Bxnq4fTHbWjvrKxGdf64=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23761845/acastro_illo_226061_0001.jpg",
+                "Henter had been driving on the right side of the road, just as he did back home. Instinctively, he swerved right. But the other driver, faithful to his own British instincts, swerved left. It was a head-on collision. Henter’s face broke the windshield and glass shards left him with detached retinas and eighty stitches on his face — including thirteen on each eyeball. Lying in the hospital, he thought to himself, Maybe I’ll have to miss the race. The first operation to reattach his retina was successful, and Henter regained his sight in one eye — he could see light and some colors — but as scar tissue formed, the retina detached again. When he woke up after the second operation, Henter knew things were different this time. After the first operation, everything had been bright. But the second time, everything was dark."
+            )
+        )
+        listBerita.add(
+            Berita(
+                "Watch the latest trailer for Suzume from the director behind Your Name",
+                "Andrew Webster",
+                "15-07-2022",
+                "https://www.theverge.com/2022/7/15/23219953/suzume-trailer-crunchyroll-2023-makoto-shinkai",
+                "The Verge",
+                "https://cdn.vox-cdn.com/thumbor/XIFBiEeCQg8Qb7Y4J6Qnv8ce4Cc=/0x105:2048x1177/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23844669/image2.jpg",
+                "Suzume, the next film from director Makoto Shinkai, is only a few months away from theatrical release — and now we finally have a better idea of what to expect from the mysterious project. The movie’s latest trailer has all the bittersweet vibes you’d expect from the director of Your Name and Weathering With You, along with some offbeat additions like an adorable cat with its own Twitter feed and a sentient chair that loves to run. The trailer also introduces Nanoka Hara in the title role, as well as the film’s main theme song. (If you don’t speak Japanese, you can turn on closed captions in the trailer above to see the lyrics.)"
             )
         )
         setMode("mode_kartu")

@@ -1,7 +1,9 @@
 package com.example.dicodingandroidpemula.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,7 @@ class DetailActivity : AppCompatActivity() {
         detailActivityBinding = ActivityDetailBinding.inflate(layoutInflater)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Detail"
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#192A5F")))
         setContentView(detailActivityBinding.root)
 
         initView()
