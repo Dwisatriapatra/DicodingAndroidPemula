@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dicodingandroidpemula.databinding.ActivityDetailBinding
 import com.example.dicodingandroidpemula.model.Berita
@@ -38,16 +39,6 @@ class DetailActivity : AppCompatActivity() {
         detailActivityBinding.detailDeskripsi.text = listBerita?.deskripsi
         detailActivityBinding.detailSumber.text = listBerita?.sumber
         Picasso.get().load(listBerita?.gambar).into(detailActivityBinding.detailGambar)
-
-        //open browser action
-        detailActivityBinding.detailLinkBerita.setOnClickListener {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(detailActivityBinding.detailLinkBerita.text.toString())
-                )
-            )
-        }
 
         //share action button
         detailActivityBinding.detailBagikanButton.setOnClickListener {
