@@ -2,12 +2,14 @@ package com.example.dicodingandroidpemula.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dicodingandroidpemula.R
 import com.example.dicodingandroidpemula.adapter.BeritaAdapter
-import com.example.dicodingandroidpemula.model.Berita
 import com.example.dicodingandroidpemula.databinding.ActivityMainBinding
+import com.example.dicodingandroidpemula.model.Berita
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityBinding = ActivityMainBinding.inflate(layoutInflater)
+        supportActionBar?.title = "Home"
         setContentView(mainActivityBinding.root)
+
         initBeritaAdapter()
     }
 
@@ -146,5 +150,20 @@ class MainActivity : AppCompatActivity() {
         beritaAdapter.setListBerita(listBerita)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_action_bar_home_go_to_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
+    }
 }

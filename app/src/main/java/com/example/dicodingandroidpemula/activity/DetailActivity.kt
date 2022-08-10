@@ -1,10 +1,12 @@
 package com.example.dicodingandroidpemula.activity
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.graphics.Paint
+import android.net.Uri
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
-import com.example.dicodingandroidpemula.model.Berita
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dicodingandroidpemula.databinding.ActivityDetailBinding
+import com.example.dicodingandroidpemula.model.Berita
 
 class DetailActivity : AppCompatActivity() {
 
@@ -13,6 +15,8 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         detailActivityBinding = ActivityDetailBinding.inflate(layoutInflater)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Detail"
         setContentView(detailActivityBinding.root)
 
         initView()
@@ -27,10 +31,23 @@ class DetailActivity : AppCompatActivity() {
         detailActivityBinding.detailPenulis.text = listBerita.penulis
         detailActivityBinding.detailTanggalTerbit.text = listBerita.tanggalTerbit
         detailActivityBinding.detailLinkBerita.text = listBerita.urlBerita
+        detailActivityBinding.detailLinkBerita.paintFlags = Paint.UNDERLINE_TEXT_FLAG
         detailActivityBinding.detailDeskripsi.text = listBerita.deskripsi
         detailActivityBinding.detailSumber.text = listBerita.sumber
 
         //open browser action
-        detailActivityBinding.detailLinkBerita.movementMethod = LinkMovementMethod.getInstance()
+        detailActivityBinding.detailLinkBerita.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(detailActivityBinding.detailLinkBerita.text.toString())
+                )
+            )
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }
